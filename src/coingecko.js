@@ -1,6 +1,6 @@
 
-const axios = require('axios');
-const config = require('../config/config');
+const axios = require('axios')
+const config = require('../config/config')
 
 async function getCryptoPrice(cryptoName) {
   try {
@@ -10,17 +10,17 @@ async function getCryptoPrice(cryptoName) {
         ids: cryptoId,
         vs_currencies: 'usd',
       },
-    });
+    })
 
     if (response.data[cryptoId]) {
       const price = response.data[cryptoId].usd;
-      return `El precio actual de ${cryptoName} es $${price}.`;
+      return `El precio actual de ${cryptoName} es $${price}.`
     } else {
-      return `Lo siento, no tengo información sobre ${cryptoName}.`;
+      return `Lo siento, no tengo información sobre ${cryptoName}.`
     }
   } catch (error) {
-    return 'Error al consultar el precio de la criptomoneda.';
+    return 'Error al consultar el precio de la criptomoneda.'
   }
 }
 
-module.exports = getCryptoPrice;
+module.exports = getCryptoPrice
